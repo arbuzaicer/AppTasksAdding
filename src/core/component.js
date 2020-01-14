@@ -7,4 +7,11 @@ export class Component {
     init() {
 
     }
+
+    show(elem) {
+        elem.classList.remove('hide')
+    }
+    hide(elem) {
+        elem.classList.add('hide')
+    }
 }
