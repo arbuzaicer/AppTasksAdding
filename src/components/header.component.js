@@ -9,16 +9,17 @@ export class HeaderComponent extends Component {
     init() {
         const btn = this.$el.querySelector('.js-btn');
         const btnBack = document.querySelector('.back-btn');
-        btn.addEventListener('click', () => {
-                this.hide(this.$el);
-                this.show( document.querySelector('.w-container'));
+        btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                this.hide();
+                document.querySelector('.w-container').classList.remove('hide');
             }
         );
 
         btnBack.addEventListener('click', () => {
-            this.show(this.$el);
+            this.show();
             this.$el.classList.remove('hide');
-            this.hide( document.querySelector('.w-container'));
+            document.querySelector('.w-container').classList.add('hide')
         })
     }
 }
